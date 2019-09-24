@@ -1,0 +1,17 @@
+body {
+    background-color: #e0e0e0;
+    font-family: 'Baloo', cursive;
+}
+
+p {
+    font-size: 20px;
+    font-display: center;
+}
+
+footer {
+    padding: 210px
+}
+
+button {
+    padding: 100px;
+}

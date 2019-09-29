@@ -1,0 +1,3 @@
+INSERT INTO questions (question) VALUES ('You love to travel'), ('You love dogs'), ('When you hear "Hello" by Adele playing, you start singing'), ('You love to hike'), ('You love to learn new things'), ('Fresh cut flowers are a waste'), ('You have fun and enjoy light hearted conversations'), ('You are the person who plans big parties'), ('You are prefer coffee over teas'), ('Scary movies are stupid');
+
+INSERT INTO friends (name, picture_link) VALUES ('Annie','https://unsplash.com/photos/8j-2d94Orlc'), ('Joe', 'https://unsplash.com/photos/ZUXcUqjf13w');

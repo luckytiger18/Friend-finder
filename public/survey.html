@@ -163,7 +163,7 @@
 
     <footer class="footer">
         <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/luckytiger18/Friend-finder"
-                target="_blank">GitHub Repo</a> | <a href="#">Home</a></p>
+                target="_blank">GitHub Repo</a> | <a href="/">Home</a></p>
     </footer>
 </body>
 
@@ -197,6 +197,9 @@
                     first_name1: first_name1,
                     picture1: picture1,
                     answer: JSON.stringify(answer)
+                },
+                success: function (data, textStatus) {
+                        window.location = data;
                 }
             });
         });

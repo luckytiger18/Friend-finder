@@ -8,9 +8,9 @@
 --     id, question_id, friend_id, score
 
 
-CREATE DATABASE schema_db;
+CREATE DATABASE friend_finder_db;
 
-USE schema_db;
+USE friend_finder_db;
 
 CREATE TABLE IF NOT EXISTS questions (
     id INT AUTO_INCREMENT,
@@ -25,25 +25,25 @@ CREATE TABLE IF NOT EXISTS friends (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS scores (
-    id INT AUTO_INCREMENT,
-    question_id VARCHAR(255) NOT NULL,
-    friend_id VARCHAR(255) NOT NULL,
-    answer VARCHAR(255) NOT NULL,
-    PRIMARY KEY (id)
-); 
- 
---     SELECT ABS(score - score)
---         SELECT * 
---         FROM friends f
---         LEFT JOIN scores s
---         ON s.friend_id = f.id
---         LEFT JOIN (
---             SELECT *
---             FROM friends 
---             LEFT JOIN scores s
---             ON scores.friend_id = friends.id
---             WHERE friends.id != f.id
---         ) fs
---         ON __________
--- GROUP BY friend_id
+CREATE TABLE scores (
+    id INT NOT NULL AUTO_INCREMENT,
+    question_id INT NOT NULL,
+    friend_id INT NOT NULL,
+    answer INT NOT NULL,
+    FOREIGN KEY (question_id) REFERENCES questions(id),
+    FOREIGN KEY (friend_id) REFERENCES friends(id),
+    PRIMARY KEY (id),
+    CHECK (answer >= 0),
+    CHECK (answer <= 10)
+);
+
+SELECT * FROM scores LEFT JOIN friends ON scores.friend_id = friends.id;
+
+SELECT question_id, friend_id, t2friend_id, answer_difference FROM
+(SELECT *, (answer-t2answer) AS answer_difference FROM 
+(SELECT *
+FROM scores s1
+LEFT JOIN (SELECT question_id AS t2question_id,
+    friend_id AS t2friend_id, answer AS t2answer
+    FROM scores s2) t2
+    ON t2question_id = s1.question_id) t3) t4 WHERE friend_id = 1;

@@ -1,3 +1,5 @@
 INSERT INTO questions (question) VALUES ('You love to travel'), ('You love dogs'), ('When you hear "Hello" by Adele playing, you start singing'), ('You love to hike'), ('You love to learn new things'), ('Fresh cut flowers are a waste'), ('You have fun and enjoy light hearted conversations'), ('You are the person who plans big parties'), ('You are prefer coffee over teas'), ('Scary movies are stupid');
 
-INSERT INTO friends (name, picture_link) VALUES ('Annie','https://unsplash.com/photos/8j-2d94Orlc'), ('Joe', 'https://unsplash.com/photos/ZUXcUqjf13w');
+INSERT INTO friends (name, picture_link) VALUES ('Annie','https://cuddleclones.com/wp-content/uploads/2017/05/lil_tuck_the_aussie-WEBSITE.jpg'), ('Joe', 'https://unsplash.com/photos/ZUXcUqjf13w'), ('Popcorn','https://unsplash.com/photos/T-0EW-SEbsE'), ('Poppy','https://unsplash.com/photos/eoqnr8ikwFE'), ('Pop','https://unsplash.com/photos/ngqyo2AYYnE');
+
+INSERT INTO scores (question_id, friend_id, answer) VALUES (1, 1, 4), (2, 1, 5), (3, 1, 6), (1, 2, 5), (2, 2, 8), (3, 2, 9),(1, 3, 8), (2, 3, 2), (3, 3, 1), (1, 4, 3), (2, 4, 5), (3, 4, 6), (1, 5, 7), (2, 5, 9), (3, 5, 3)

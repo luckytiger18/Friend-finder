@@ -3,6 +3,7 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
+var port = process.env.PORT || 3000;
 
 //making static assets
 app.use(express.static(path.join(__dirname, '../public')))
@@ -86,6 +87,6 @@ app.post('/api/insert', function (req, res) {
 	});
 });
 
-app.listen(3000, function () {
+app.listen(port, function () {
 	console.log('listening on 3000');
 });

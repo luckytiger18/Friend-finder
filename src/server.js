@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 if (process.env.JAWSDB_URL) {
-	connection = mysql.cÍreateConnection(process.env.JAWSDB_URL);
+	connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
 	connection = mysql.createConnection({
 		host: 'localhost',

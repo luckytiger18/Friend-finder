@@ -1,20 +1,26 @@
 var express = require('express');
 var app = express();
-var path = require('path')
-var bodyParser = require('body-parser')
+var path = require('path');
+var bodyParser = require('body-parser');
+var mysql = require('mysql');
 
 //making static assets
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: 'password',
-	database: 'friend_finder_db'
-});
+if (process.env.JAWSDB_URL) {
+	connection = mysql.cÍreateConnection(process.env.JAWSDB_URL);
+} else {
+	connection = mysql.createConnection({
+		host: 'localhost',
+		user: 'root',
+		password: 'password',
+		database: 'friend_finder_db'
+	});
+};
+
+
 connection.connect();
 
 

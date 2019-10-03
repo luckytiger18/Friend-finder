@@ -7,6 +7,7 @@ var port = process.env.PORT || 3000;
 
 //making static assets
 app.use(express.static(path.join(__dirname, '../public')))
+console.log(path.join(__dirname, '../public'));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
@@ -88,5 +89,5 @@ app.post('/api/insert', function (req, res) {
 });
 
 app.listen(port, function () {
-	console.log('listening on 3000');
+	console.log('listening on' + port);
 });
